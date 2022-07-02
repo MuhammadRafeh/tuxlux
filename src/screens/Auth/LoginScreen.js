@@ -8,7 +8,7 @@ import Button from '../../components/UI/Button';
 const LoginScreen = props => {
     return (
         <View style={styles.screen}>
-            <ScrollView>
+            <ScrollView contentContainerStyle={{ paddingBottom: 50 }}>
                 <View style={{ alignSelf: 'center' }}>
                     <LoginSVG />
                 </View>
