@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { TextInput as VanillaTextInput, StyleSheet, View, Text } from 'react-native';
 import colors from '../../constants/colors';
 
-const TextInput = props => {
+const TextInput = (props, ref) => {
     const { active } = props;
     const color = active ? 'rgba(255,255,255,1)' : 'rgba(255,255,255,0.37)';
     return (
         <View>
             <View style={{ ...styles.textInput, backgroundColor: colors.secondary, opacity: active ? 0.3 : 0.08, position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }} />
             <VanillaTextInput
+                ref={ref}
                 {...props}
                 style={[styles.textInput, props.style, { borderWidth: active ? 0 : 1 }]}
                 placeholderTextColor={color}
@@ -23,7 +24,7 @@ const TextInput = props => {
     );
 }
 
-export default TextInput;
+export default forwardRef(TextInput);
 
 const styles = StyleSheet.create({
     textInput: {
