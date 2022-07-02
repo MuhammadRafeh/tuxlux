@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
-import { View, StyleSheet, Image } from 'react-native';
-import colors from '../constants/constants';
-import Logo from "../../assets/images/UI/logo.svg";
+import { View, StyleSheet } from 'react-native';
+import Logo from '../'
+import Constants from 'expo-constants';
+import colors from '../constants/colors';
 
-const OnBoardingScreen = () => {
+const OnBoardingScreen = props => {
     useEffect(() => {
-        setTimeout(() => props.navigation.replace('Auth'), 2);
+        setTimeout(() => props.navigation.replace('Login'), 2);
     }, [])
     return (
         <View style={styles.screen}>
@@ -21,6 +22,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: colors.secondary
+        backgroundColor: colors.primary,
+        marginTop: Constants.statusBarHeight
     }
 })
