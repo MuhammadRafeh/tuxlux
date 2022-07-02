@@ -1,6 +1,5 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import OnBoardingScreen from '../screens/OnBoardingScreen';
 import LoginScreen from '../screens/Auth/LoginScreen';
 import SignupScreen from '../screens/Auth/SignupScreen';
 import EnterEmailScreen from '../screens/Auth/EnterEmailScreen';
@@ -12,10 +11,9 @@ const Stack = createStackNavigator();
 function AuthNavigator() {
     return (
         <Stack.Navigator
-            initialRouteName={'OnBoarding'}
+            initialRouteName={'Login'}
             screenOptions={{ headerShown: false }}
         >
-            <Stack.Screen name="OnBoarding" component={OnBoardingScreen} />
             <Stack.Screen name="Login" component={LoginScreen} />
             <Stack.Screen name="Signup" component={SignupScreen} />
             <Stack.Screen name="EnterEmail" component={EnterEmailScreen} />
