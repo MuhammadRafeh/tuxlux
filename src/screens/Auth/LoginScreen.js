@@ -6,6 +6,9 @@ import LoginSVG from '../../../assets/images/login/index.svg'
 import TextInput from '../../components/UI/TextInput';
 import Button from '../../components/UI/Button';
 const LoginScreen = props => {
+    const [email, setEmail] = useState('');
+    const [passward, setPassword] = useState('');
+
     const [whichFocus, setWhichFocus] = useState(null);
     const setFocus = type => {
         setWhichFocus(type)
@@ -32,6 +35,8 @@ const LoginScreen = props => {
                 <View style={{ width: '86%', alignSelf: 'center' }}>
                     <View style={{ marginBottom: 25, }}>
                         <TextInput
+                            onChangeText={setEmail}
+                            value={email}
                             placeholder={'Email'}
                             label={'Email'}
                             active={whichFocus == 0 ? true : false}
@@ -41,6 +46,8 @@ const LoginScreen = props => {
                     </View>
                     <View style={{ marginBottom: 10 }}>
                         <TextInput
+                            onChangeText={setPassword}
+                            value={passward}
                             placeholder={'Password'}
                             active={whichFocus == 1 ? true : false}
                             label={'Password'}
