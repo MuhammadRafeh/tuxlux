@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import Constants from 'expo-constants';
 import colors from '../../constants/colors';
@@ -6,6 +6,20 @@ import SignupSVG from '../../../assets/images/signup/index.svg'
 import TextInput from '../../components/UI/TextInput';
 import Button from '../../components/UI/Button';
 const SignupScreen = props => {
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+    const [passward, setPassword] = useState('');
+    const [confirm, setConfirm] = useState('');
+
+
+    const [whichFocus, setWhichFocus] = useState(null);
+    const setFocus = type => {
+        setWhichFocus(type)
+    }
+    const onBlur = () => {
+        setWhichFocus(null);
+    }
     return (
         <View style={styles.screen}>
             <ScrollView contentContainerStyle={{ paddingBottom: 10 }}>
@@ -24,19 +38,59 @@ const SignupScreen = props => {
                 </View>
                 <View style={{ width: '86%', alignSelf: 'center' }}>
                     <View style={{ marginBottom: 20 }}>
-                        <TextInput placeholder={'First Name'} label={'First Name'} />
+                        <TextInput
+                            onChangeText={setFirstName}
+                            value={firstName}
+                            placeholder={'First Name'}
+                            label={'First Name'}
+                            active={whichFocus == 0 ? true : false}
+                            onFocus={setFocus.bind(null, 0)}
+                            onBlur={onBlur}
+                        />
                     </View>
                     <View style={{ marginBottom: 20 }}>
-                        <TextInput placeholder={'Last Name'} label={'Last Name'} />
+                        <TextInput
+                            onChangeText={setLastName}
+                            value={lastName}
+                            placeholder={'Last Name'}
+                            label={'Last Name'}
+                            active={whichFocus == 1 ? true : false}
+                            onFocus={setFocus.bind(null, 1)}
+                            onBlur={onBlur}
+                        />
                     </View>
                     <View style={{ marginBottom: 20 }}>
-                        <TextInput placeholder={'Enter Email'} label={'Email'} />
+                        <TextInput
+                            onChangeText={setEmail}
+                            value={email}
+                            placeholder={'Enter Email'}
+                            label={'Email'}
+                            active={whichFocus == 2 ? true : false}
+                            onFocus={setFocus.bind(null, 2)}
+                            onBlur={onBlur} s
+                        />
                     </View>
                     <View style={{ marginBottom: 20 }}>
-                        <TextInput placeholder={'Password'} label={'Password'} />
+                        <TextInput
+                            onChangeText={setPassword}
+                            value={passward}
+                            placeholder={'Password'}
+                            label={'Password'}
+                            active={whichFocus == 3 ? true : false}
+                            onFocus={setFocus.bind(null, 3)}
+                            onBlur={onBlur}
+                        />
                     </View>
                     <View style={{ marginBottom: 20 }}>
-                        <TextInput placeholder={'Password'} label={'Confirm'} />
+                        <TextInput
+                            onChangeText={setConfirm}
+                            value={confirm}
+                            placeholder={'Password'}
+                            label={'Confirm'}
+                            active={whichFocus == 4 ? true : false}
+                            onFocus={setFocus.bind(null, 4)}
+                            onBlur={onBlur}
+                        />
                     </View>
 
                     <View style={{ marginTop: 10, alignSelf: 'center' }}>

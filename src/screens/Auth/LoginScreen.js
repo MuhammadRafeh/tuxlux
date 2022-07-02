@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import Constants from 'expo-constants';
 import colors from '../../constants/colors';
@@ -6,6 +6,13 @@ import LoginSVG from '../../../assets/images/login/index.svg'
 import TextInput from '../../components/UI/TextInput';
 import Button from '../../components/UI/Button';
 const LoginScreen = props => {
+    const [whichFocus, setWhichFocus] = useState(null);
+    const setFocus = type => {
+        setWhichFocus(type)
+    }
+    const onBlur = () => {
+        setWhichFocus(null);
+    }
     return (
         <View style={styles.screen}>
             <ScrollView contentContainerStyle={{ paddingBottom: 50 }}>
@@ -24,10 +31,22 @@ const LoginScreen = props => {
                 </View>
                 <View style={{ width: '86%', alignSelf: 'center' }}>
                     <View style={{ marginBottom: 25, }}>
-                        <TextInput placeholder={'Email'} label={'Email'} />
+                        <TextInput
+                            placeholder={'Email'}
+                            label={'Email'}
+                            active={whichFocus == 0 ? true : false}
+                            onFocus={setFocus.bind(null, 0)}
+                            onBlur={onBlur}
+                        />
                     </View>
                     <View style={{ marginBottom: 10 }}>
-                        <TextInput placeholder={'Password'} label={'Password'} />
+                        <TextInput
+                            placeholder={'Password'}
+                            active={whichFocus == 1 ? true : false}
+                            label={'Password'}
+                            onFocus={setFocus.bind(null, 1)}
+                            onBlur={onBlur}
+                        />
                     </View>
                     <View style={{ alignItems: 'flex-end' }}>
                         <TouchableOpacity>
