@@ -22,7 +22,7 @@ const LoginScreen = props => {
             </View>
 
             <View>
-                <TextInput active placeholder={'Email'} label={'Email'}/>
+                <TextInput placeholder={'Email'} label={'Email'} />
             </View>
         </View>
     );
