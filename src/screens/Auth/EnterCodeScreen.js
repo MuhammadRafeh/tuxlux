@@ -17,10 +17,10 @@ const EnterCodeScreen = props => {
     const components = arrayOfFour.map((_, index) => {
         if (index <= code.length - 1) {
             return (
-                <Text style={styles.number}>{code[index]}</Text>
+                <Text key={index} style={styles.number}>{code[index]}</Text>
             )
         } else {
-            return <View style={{ width: 16, height: 16, borderRadius: 8, backgroundColor: 'white', marginRight: 20 }} />
+            return <View key={index} style={{ width: 16, height: 16, borderRadius: 8, backgroundColor: 'white', marginRight: 20 }} />
         }
     })
     return (
@@ -38,6 +38,7 @@ const EnterCodeScreen = props => {
                             {components}
                         </View>
                         <TextInput
+                            keyboardType={'numeric'}
                             selectionColor={'black'}
                             placeholderTextColor={'black'}
                             ref={codeRef}
@@ -64,12 +65,12 @@ const EnterCodeScreen = props => {
                         />
                     </View>
                     <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 4 }}>
-                        <TouchableOpacity onPress={() => props.navigation.navigate('Signup')}>
+                        <TouchableOpacity onPress={() => alert('Code sent to you!')}>
                             <Text style={{ textAlign: 'center', color: 'white', fontSize: 13 }}>Send Me New Code</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={{ marginTop: 34, alignSelf: 'center' }}>
-                        <Button applyBack title={'Set New Password'} onPress={() => props.navigation.navigate('EnterCode')} />
+                        <Button applyBack title={'Set New Password'} onPress={() => props.navigation.navigate('EnterNewPassword')} />
                     </View>
                 </View>
             </ScrollView>
@@ -88,6 +89,6 @@ const styles = StyleSheet.create({
     number: {
         color: 'white',
         fontSize: 40,
-        marginRight: 18
+        marginRight: 16.5
     }
 })
