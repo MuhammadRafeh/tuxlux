@@ -43,7 +43,7 @@ const EnterEmailScreen = props => {
                         />
                     </View>
                     <View style={{ marginTop: 40, alignSelf: 'center' }}>
-                        <Button applyBack title={'Get Code'} onPress={() => { }} />
+                        <Button applyBack title={'Get Code'} onPress={() => props.navigation.navigate('EnterCode')} />
                     </View>
                 </View>
                 <View style={{ width: '100%', height: 50, paddingLeft: 10, position: 'absolute', top: 10, alignItems: 'flex-start' }}>
