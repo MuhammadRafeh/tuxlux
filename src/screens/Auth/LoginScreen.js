@@ -61,7 +61,7 @@ const LoginScreen = props => {
                         </TouchableOpacity>
                     </View>
                     <View style={{ marginTop: 60, alignSelf: 'center' }}>
-                        <Button title={'Login'} onPress={() => { }} />
+                        <Button title={'Login'} onPress={() => props.navigation.navigate('Home')} />
                     </View>
                     <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 30 }}>
                         <TouchableOpacity onPress={() => props.navigation.navigate('Signup')}>

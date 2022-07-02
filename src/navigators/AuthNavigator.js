@@ -5,6 +5,7 @@ import SignupScreen from '../screens/Auth/SignupScreen';
 import EnterEmailScreen from '../screens/Auth/EnterEmailScreen';
 import EnterCodeScreen from '../screens/Auth/EnterCodeScreen';
 import EnterNewPasswordScreen from '../screens/Auth/EnterNewPasswordScreen';
+import HomeScreen from '../screens/Main/HomeScreen';
 
 const Stack = createStackNavigator();
 
@@ -19,6 +20,7 @@ function AuthNavigator() {
             <Stack.Screen name="EnterEmail" component={EnterEmailScreen} />
             <Stack.Screen name="EnterCode" component={EnterCodeScreen} />
             <Stack.Screen name="EnterNewPassword" component={EnterNewPasswordScreen} />
+            <Stack.Screen name="Home" component={HomeScreen} />
         </Stack.Navigator>
     );
 }
