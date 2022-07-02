@@ -7,7 +7,6 @@ import Eye from '../../../assets/images/enternewpassword/eye.svg'
 import TextInput from '../../components/UI/TextInput';
 import Button from '../../components/UI/Button';
 const { height } = Dimensions.get('window');
-import Ionicons from '@expo/vector-icons/Ionicons';
 
 const EnterNewPasswordScreen = props => {
     const newPasswordRef = useRef(null);
