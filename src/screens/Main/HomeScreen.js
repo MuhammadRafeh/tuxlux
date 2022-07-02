@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import Constants from 'expo-constants';
 import Filter from '../../../assets/images/home/filter.svg';
+import GreaterThan from '../../../assets/images/home/greaterThan.svg';
 import colors from '../../constants/colors';
 import { Ionicons } from '@expo/vector-icons';
 const cat = ['BEST MATCH', 'TOP RATED', 'PRICE LOW-HIGH', 'PRICE HIGH-LOW']
@@ -29,6 +30,14 @@ const HomeScreen = props => {
                         ))
                     }
                 </ScrollView>
+            </View>
+            <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0, width: '100%', height: 78, backgroundColor: 'white', justifyContent: 'center', alignItems: 'center' }}>
+                <TouchableOpacity style={{ flexDirection: 'row', backgroundColor: colors.secondary, width: 218, height: 47, borderRadius: 23, alignItems: 'center', paddingLeft: 20, justifyContent: 'space-between' }}>
+                    <Text style={{ marginRight: 30, fontWeight: 'bold', color: 'white', fontSize: 17 }}>GENERATE IN PDG</Text>
+                    <View style={{ marginRight: 5, justifyContent: 'center', alignItems: 'center', width: 34, height: 34, borderRadius: 18, backgroundColor: 'white' }}>
+                        <GreaterThan />
+                    </View>
+                </TouchableOpacity>
             </View>
         </View>
     );
