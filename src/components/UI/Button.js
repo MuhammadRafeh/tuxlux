@@ -3,9 +3,9 @@ import { Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import colors from '../../constants/colors';
 const { width } = Dimensions.get('screen');
 const Button = props => {
-    const { onPress, title } = props;
+    const { onPress, title, applyBack } = props;
     return (
-        <TouchableOpacity onPress={onPress} style={styles.button}>
+        <TouchableOpacity onPress={onPress} style={[styles.button, { backgroundColor: applyBack ? colors.secondary : null }]}>
             <Text style={styles.buttonText} numberOfLines={1} adjustsFontSizeToFit={true}>{title}</Text>
         </TouchableOpacity>
     );

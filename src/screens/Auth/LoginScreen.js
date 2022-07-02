@@ -56,7 +56,7 @@ const LoginScreen = props => {
                         />
                     </View>
                     <View style={{ alignItems: 'flex-end' }}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => props.navigation.navigate('EnterEmail')}>
                             <Text style={{ color: 'white', opacity: 0.5 }}>Forget Password?</Text>
                         </TouchableOpacity>
                     </View>

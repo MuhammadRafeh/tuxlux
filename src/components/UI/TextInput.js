@@ -10,7 +10,7 @@ const TextInput = props => {
             <View style={{ ...styles.textInput, backgroundColor: colors.secondary, opacity: active ? 0.3 : 0.08, position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }} />
             <VanillaTextInput
                 {...props}
-                style={[styles.textInput, props.style, { borderWidth: active ? 0 : 1, color }]}
+                style={[styles.textInput, props.style, { borderWidth: active ? 0 : 1 }]}
                 placeholderTextColor={color}
                 selectionColor={color}
             />
@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
         fontSize: 16,
         padding: 10,
         paddingHorizontal: 30,
-        borderColor: colors.secondary
+        borderColor: colors.secondary,
+        color: 'white'
     },
     label: {
         paddingHorizontal: 8,
