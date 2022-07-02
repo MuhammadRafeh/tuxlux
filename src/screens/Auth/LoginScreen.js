@@ -38,7 +38,7 @@ const LoginScreen = props => {
                         <Button title={'Login'} onPress={() => { }} />
                     </View>
                     <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 30 }}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => props.navigation.navigate('Signup')}>
                             <Text style={{ textAlign: 'center', color: colors.secondary, fontSize: 19 }}>Create Account</Text>
                         </TouchableOpacity>
                     </View>
