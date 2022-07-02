@@ -18,7 +18,7 @@ const LoginScreen = props => {
     }
     return (
         <View style={styles.screen}>
-            <ScrollView contentContainerStyle={{ paddingBottom: 50 }}>
+            <ScrollView contentContainerStyle={{ paddingBottom: 10 }}>
                 <View style={{ alignSelf: 'center' }}>
                     <LoginSVG />
                 </View>
